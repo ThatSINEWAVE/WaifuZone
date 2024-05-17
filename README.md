@@ -29,7 +29,6 @@ Users are warned before accessing any NSFW content that might be fetched from th
 
 You can access WaifuZone through the GitHub Pages link: [WaifuZone](https://thatsinewave.github.io/WaifuZone)
 
-
 ## Local Installation
 
 To run this project locally, follow these steps:
