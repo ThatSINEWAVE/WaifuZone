@@ -14,6 +14,16 @@ header {
     background: transparent;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+a:hover {
+    color: #007bff;
+}
+
 .toggle-switch {
     position: relative;
     width: 50px;
@@ -92,6 +102,13 @@ main {
 }
 
 .tag-box h2 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #121212;
+}
+
+.tag-box h3 {
+    margin-top: 1px;
     margin-bottom: 1rem;
     color: #121212;
 }
@@ -226,7 +243,6 @@ footer {
 footer a {
     margin: 0 1rem;
     color: inherit;
-    transition: color 0.3s;
 }
 
 footer a:hover {
