@@ -24,10 +24,30 @@ a:hover {
     color: #007bff;
 }
 
+.toggle-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.toggle-switch input:checked ~ .fa-sun {
+    opacity: 0;
+}
+
+.toggle-switch input:not(:checked) ~ .fa-moon {
+    opacity: 0;
+}
+
+.toggle-container i {
+    font-size: 1.2rem;
+    transition: opacity 0.3s;
+}
+
 .toggle-switch {
     position: relative;
     width: 50px;
     height: 25px;
+    margin-right: 14px;
 }
 
 .toggle-switch input {
