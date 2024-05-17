@@ -104,17 +104,19 @@ main {
 
 #image-display {
     text-align: center;
+    border-radius: 10px;
 }
 
 #image-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-    border: 1px solid #ccc;
     border-radius: 10px;
-    padding: 1rem;
+    max-width: 400px;
+    max-height: 1000px;
+    overflow: hidden;
     background-color: white;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
 }
 
 #image {
