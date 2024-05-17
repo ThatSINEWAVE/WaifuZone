@@ -35,7 +35,7 @@ To run this project locally, follow these steps:
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-github-username/WaifuZone.git
+   git clone https://github.com/ThatSINEWAVE/WaifuZone.git
    ```
 2. Navigate to the project directory:
    ```sh
