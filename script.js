@@ -75,10 +75,36 @@ document.addEventListener('DOMContentLoaded', () => {
                 const artistNameElement = document.getElementById('artist-name');
                 const sourceLinkElement = document.getElementById('source-link');
 
-                const artistName = data.images[0].artist || 'Unknown artist';
-                const source = data.images[0].source || 'Unknown source';
+                const artistInfo = data.images[0].artist;
+                let artistName = 'Unknown artist';
+                let artistLink = '';
+
+                if (artistInfo) {
+                    if (artistInfo.deviant_art) {
+                        artistLink = artistInfo.deviant_art;
+                    } else if (artistInfo.twitter) {
+                        artistLink = artistInfo.twitter;
+                    } else if (artistInfo.pixiv) {
+                        artistLink = artistInfo.pixiv;
+                    } else if (artistInfo.patreon) {
+                        artistLink = artistInfo.patreon;
+                    }
+
+                    artistName = artistInfo.name;
+                }
 
                 artistNameElement.textContent = artistName;
+
+                if (artistLink) {
+                    artistNameElement.href = artistLink;
+                    artistNameElement.target = '_blank';
+                } else {
+                    artistNameElement.removeAttribute('href');
+                    artistNameElement.removeAttribute('target');
+                }
+
+                const source = data.images[0].source || 'Unknown source';
+
                 sourceLinkElement.textContent = 'View Source';
                 sourceLinkElement.href = source;
                 sourceLinkElement.target = '_blank';
