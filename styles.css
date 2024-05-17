@@ -68,11 +68,42 @@ main {
     text-align: center;
 }
 
+#tag-selection h1 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 50px;
+    text-align: center;
+}
+
 .tags {
     display: flex;
     justify-content: center;
     gap: 2rem;
     margin: 2rem 0;
+}
+
+.tag-box {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 1rem;
+    width: 300px;
+    transition: background-color 0.3s, border-color 0.3s;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+}
+
+.tag-box h2 {
+    margin-bottom: 1rem;
+    color: #121212;
+}
+
+.safe-for-work {
+    background-color: #e0f7fa;
+    border-color: #00acc1;
+}
+
+.not-safe-for-work {
+    background-color: #ffebee;
+    border-color: #e57373;
 }
 
 .tag-column {
@@ -84,13 +115,42 @@ main {
 .tag-button {
     padding: 0.75rem 1.5rem;
     border: none;
+    background-color: #00acc1;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
 }
 
 .tag-button:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
+}
+
+#choose-another-tag {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    background-color: #00acc1;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#choose-another-tag:hover {
+    transform: scale(1.05);
+}
+
+#get-another-image {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    background-color: #e57373;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#get-another-image:hover {
+    transform: scale(1.05);
 }
 
 .nsfw {
