@@ -4,13 +4,17 @@
 
 Welcome to WaifuZone, an interactive web application to explore and enjoy various anime-style images! This project leverages the waifu.im API to dynamically fetch images based on user-selected tags.
 
-</div>
+![WaifuZone1](https://github.com/ThatSINEWAVE/WaifuZone/assets/133239148/9b74351a-ae0f-406e-9f5c-3ae5df507975)
 
 ## Content Warning
 
 **WaifuZone does not host any images.
 All images are fetched live upon user request using the waifu.im API.
 Users are warned before accessing any NSFW content that might be fetched from the API.**
+
+![WaifuZone2](https://github.com/ThatSINEWAVE/WaifuZone/assets/133239148/12583943-3f7f-4d8e-bc99-7c5002bbf8d5)
+
+</div>
 
 ## Features
 
