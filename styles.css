@@ -188,13 +188,17 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
     max-width: 400px;
     max-height: 1000px;
     overflow: hidden;
     background-color: white;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
 }
+
 
 #age-verification {
     position: fixed;
@@ -259,9 +263,12 @@ main {
 
 #image-info {
     border: 2px solid #fff;
-    border-radius: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     padding: 1rem;
-    margin-top: 1rem;
+    margin-top: 0rem;
     max-width: 400px;
     background-color: #ffffff;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
