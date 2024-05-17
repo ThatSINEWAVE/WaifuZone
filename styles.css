@@ -206,6 +206,37 @@ main {
     border-radius: 10px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
     z-index: 999;
+    flex-direction: column;
+    align-items: row;
+}
+
+#age-verification button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin: 0.5rem;
+}
+
+#age-verification p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+#age-yes {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+#age-no {
+    background-color: #f44336;
+    color: #fff;
+}
+
+#age-yes:hover,
+#age-no:hover {
+    transform: scale(1.05);
 }
 
 #age-verification-overlay {
