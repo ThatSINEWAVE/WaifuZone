@@ -14,61 +14,61 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentTag = null;
     let isAgeVerified = false;
 
-    // Load and apply the saved theme; checking if there's a saved theme in the local storage; and applying it to the body; and setting the theme toggle accordingly based on the saved theme;
+    // Load and apply the saved theme
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
         document.body.classList.add(savedTheme);
         themeToggle.checked = savedTheme === 'dark-mode';
     }
 
-    // Toggle theme; toggling between dark and light modes based on the toggle switch; and saving the selected theme to the local storage;
+    // Toggle theme
     themeToggle.addEventListener('change', () => {
         document.body.classList.toggle('dark-mode', themeToggle.checked);
         document.body.classList.toggle('light-mode', !themeToggle.checked);
         localStorage.setItem('theme', themeToggle.checked ? 'dark-mode' : 'light-mode');
     });
 
-    // Tag button click event; adding event listeners to each tag button; capturing the clicked tag and processing it accordingly;
+    // Tag button click event
     tagButtons.forEach(button => {
         button.addEventListener('click', () => {
             currentTag = button.dataset.tag;
             if (button.classList.contains('nsfw')) {
                 if (isAgeVerified) {
-                    fetchImage(currentTag); // if age is verified, directly fetch and display the image;
+                    fetchImage(currentTag);
                 } else {
-                    showAgeVerification(); // if age is not verified, show the age verification popup;
+                    showAgeVerification();
                 }
             } else {
-                fetchImage(currentTag); // for SFW tags, directly fetch and display the image;
+                fetchImage(currentTag);
             }
         });
     });
 
-    // Age verification buttons; handling the clicks on the age verification buttons;
+    // Age verification buttons
     ageYesButton.addEventListener('click', () => {
         isAgeVerified = true;
-        fetchImage(currentTag); // fetching and displaying the image associated with the current tag;
-        hideAgeVerification(); // hiding the age verification popup;
+        fetchImage(currentTag);
+        hideAgeVerification();
     });
 
     ageNoButton.addEventListener('click', () => {
-        window.location.href = 'https://google.com'; // redirecting to Google if the user clicks "No" on the age verification popup;
+        window.location.href = 'https://google.com';
     });
 
-    // Fetch image function; fetching the image associated with the provided tag from the API;
+    // Fetch image function
     function fetchImage(tag) {
         fetch(`https://api.waifu.im/search?included_tags=${tag}`)
             .then(response => response.json())
             .then(data => {
-                const imageUrl = data.images[0].url; // extracting the URL of the fetched image;
-                const dominantColor = data.images[0].dominant_color; // extracting the dominant color of the fetched image;
-                imageElement.src = imageUrl; // setting the source of the image element to the fetched URL;
-                document.body.style.backgroundColor = dominantColor; // changing the background color of the body to the dominant color of the fetched image;
-                tagSelectionSection.classList.add('hidden'); // hiding the tag selection section;
-                imageDisplaySection.classList.remove('hidden'); // showing the image display section;
-                if (!currentTag.includes('nsfw')) { // if the current tag is not NSFW, show the image container and image
-                    imageContainer.classList.remove('hidden'); // showing the image container;
-                    imageElement.classList.remove('hidden'); // showing the image itself;
+                const imageUrl = data.images[0].url;
+                const dominantColor = data.images[0].dominant_color;
+                imageElement.src = imageUrl;
+                document.body.style.backgroundColor = dominantColor;
+                tagSelectionSection.classList.add('hidden');
+                imageDisplaySection.classList.remove('hidden');
+                if (!currentTag.includes('nsfw')) {
+                    imageContainer.classList.remove('hidden');
+                    imageElement.classList.remove('hidden');
                 }
 
                 // Update the artist name and source
@@ -89,36 +89,46 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     }
 
-
-    // Show age verification; displaying the age verification popup and hiding the image container and image;
+    // Show age verification
     function showAgeVerification() {
-        ageVerification.classList.remove('hidden'); // showing the age verification popup;
-        imageDisplaySection.classList.remove('hidden'); // showing the image display section;
-        chooseAnotherTagButton.classList.add('hidden'); // hiding the "Choose Another Tag" button;
-        getAnotherImageButton.classList.add('hidden'); // hiding the "Get Another Image" button;
-        imageContainer.classList.add('hidden'); // hiding the image container;
-        imageElement.classList.add('hidden'); // hiding the image itself;
+        ageVerification.classList.remove('hidden');
+        imageDisplaySection.classList.remove('hidden');
+        chooseAnotherTagButton.classList.add('hidden');
+        getAnotherImageButton.classList.add('hidden');
+        imageContainer.classList.add('hidden');
+        imageElement.classList.add('hidden');
+
+        // Create a new div element for the overlay
+        const overlay = document.createElement('div');
+        overlay.id = 'age-verification-overlay';
+        document.body.appendChild(overlay);
     }
 
-    // Hide age verification; hiding the age verification popup;
+    // Hide age verification
     function hideAgeVerification() {
-        ageVerification.classList.add('hidden'); // hiding the age verification popup;
-        chooseAnotherTagButton.classList.remove('hidden'); // showing the "Choose Another Tag" button;
-        getAnotherImageButton.classList.remove('hidden'); // showing the "Get Another Image" button;
+        ageVerification.classList.add('hidden');
+        chooseAnotherTagButton.classList.remove('hidden');
+        getAnotherImageButton.classList.remove('hidden');
+
+        // Remove the overlay
+        const overlay = document.getElementById('age-verification-overlay');
+        if (overlay) {
+            overlay.remove();
+        }
     }
 
-    // Choose another tag; handling clicks on the "Choose Another Tag" button;
+    // Choose another tag
     chooseAnotherTagButton.addEventListener('click', () => {
-        tagSelectionSection.classList.remove('hidden'); // showing the tag selection section;
-        imageDisplaySection.classList.add('hidden'); // hiding the image display section;
-        imageContainer.classList.add('hidden'); // hiding the image container;
-        imageElement.classList.add('hidden'); // hiding the image itself;
-        document.getElementById('image-info').classList.add('hidden'); // hiding the image info box
-        document.body.style.backgroundColor = ''; // resetting the background color of the body;
+        tagSelectionSection.classList.remove('hidden');
+        imageDisplaySection.classList.add('hidden');
+        imageContainer.classList.add('hidden');
+        imageElement.classList.add('hidden');
+        document.getElementById('image-info').classList.add('hidden');
+        document.body.style.backgroundColor = '';
     });
 
-    // Get another image; handling clicks on the "Get Another Image" button;
+    // Get another image
     getAnotherImageButton.addEventListener('click', () => {
-        fetchImage(currentTag); // fetching and displaying another image associated with the current tag;
+        fetchImage(currentTag);
     });
 });
