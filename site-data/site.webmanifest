@@ -1,8 +1,8 @@
 {
-  "name": "Minecraft Seed Generator by ThatSINEWAVE_",
-  "description": "A large database of of compromised discord users.",
-  "short_name": "MinecraftSeeds",
-  "start_url": "/MinecraftSeeds",
+  "name": "WaifuZone by ThatSINEWAVE_",
+  "description": "A simple website to query the Waifu.im API for random images based on tags.",
+  "short_name": "WaifuZone",
+  "start_url": "/WaifuZone",
   "orientation": "portrait",
   "lang": "en-US",
   "icons": [
