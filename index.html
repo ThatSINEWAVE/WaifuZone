@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WaifuZone</title>
@@ -13,83 +12,85 @@
     <link rel="icon" type="image/png" sizes="32x32" href="site-data/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="site-data/favicon-16x16.png">
     <link rel="manifest" href="site-data/site.webmanifest">
-</head>
-
-<body>
-
+  </head>
+  <body>
     <header>
-        <div class="toggle-container">
-            <i class="fas fa-sun"></i>
-            <div class="toggle-switch">
-                <input type="checkbox" id="theme-toggle" aria-label="Toggle Dark/Light Mode">
-                <label for="theme-toggle"></label>
-            </div>
-            <i class="fas fa-moon"></i>
+      <div class="toggle-container">
+        <i class="fas fa-sun"></i>
+        <div class="toggle-switch">
+          <input type="checkbox" id="theme-toggle" aria-label="Toggle Dark/Light Mode">
+          <label for="theme-toggle"></label>
         </div>
+        <i class="fas fa-moon"></i>
+      </div>
     </header>
-
     <main id="main-content">
-        <section id="tag-selection">
-            <h1>WaifuZone</h1>
-            <h2>Select a Tag</h2>
-            <div class="tags">
-                <div class="tag-box safe-for-work">
-                    <h2>SFW Images</h2>
-                    <h3>(Safe for Work)</h3>
-                    <div class="tag-column">
-                        <button class="tag-button" data-tag="maid">Maid</button>
-                        <button class="tag-button" data-tag="waifu">Waifu</button>
-                        <button class="tag-button" data-tag="mori-calliope">Mori Calliope</button>
-                        <button class="tag-button" data-tag="raiden-shogun">Raiden Shogun</button>
-                        <button class="tag-button" data-tag="oppai">Oppai</button>
-                        <button class="tag-button" data-tag="uniform">Uniform</button>
-                        <button class="tag-button" data-tag="kamisato-ayaka">Kamisato Ayaka</button>
-                    </div>
-                </div>
-                <div class="tag-box not-safe-for-work">
-                    <h2>NSFW Images</h2>
-                    <h3>(Not Safe for Work)</h3>
-                    <div class="tag-column">
-                        <button class="tag-button nsfw" data-tag="ass">Ass</button>
-                        <button class="tag-button nsfw" data-tag="hentai">Hentai</button>
-                        <button class="tag-button nsfw" data-tag="milf">MILF</button>
-                        <button class="tag-button nsfw" data-tag="oral">Oral</button>
-                        <button class="tag-button nsfw" data-tag="paizuri">Paizuri</button>
-                        <button class="tag-button nsfw" data-tag="ecchi">Ecchi</button>
-                        <button class="tag-button nsfw" data-tag="ero">Ero</button>
-                    </div>
-                </div>
+      <section id="tag-selection">
+        <h1>WaifuZone</h1>
+        <h2>Select a Tag</h2>
+        <div class="tags">
+          <div class="tag-box safe-for-work">
+            <h2>SFW Images</h2>
+            <h3>(Safe for Work)</h3>
+            <div class="tag-column">
+              <button class="tag-button" data-tag="maid">Maid</button>
+              <button class="tag-button" data-tag="waifu">Waifu</button>
+              <button class="tag-button" data-tag="mori-calliope">Mori Calliope</button>
+              <button class="tag-button" data-tag="raiden-shogun">Raiden Shogun</button>
+              <button class="tag-button" data-tag="oppai">Oppai</button>
+              <button class="tag-button" data-tag="uniform">Uniform</button>
+              <button class="tag-button" data-tag="kamisato-ayaka">Kamisato Ayaka</button>
             </div>
-            <h3>Powered by <a href="https://www.waifu.im/">Waifu.im API</a></h3>
-        </section>
-
-        <section id="image-display" class="hidden">
-            <div id="age-verification" class="hidden">
-                <p>Are you 18 or older?</p>
-                <button id="age-yes">Yes</button>
-                <button id="age-no">No</button>
+          </div>
+          <div class="tag-box not-safe-for-work">
+            <h2>NSFW Images</h2>
+            <h3>(Not Safe for Work)</h3>
+            <div class="tag-column">
+              <button class="tag-button nsfw" data-tag="ass">Ass</button>
+              <button class="tag-button nsfw" data-tag="hentai">Hentai</button>
+              <button class="tag-button nsfw" data-tag="milf">MILF</button>
+              <button class="tag-button nsfw" data-tag="oral">Oral</button>
+              <button class="tag-button nsfw" data-tag="paizuri">Paizuri</button>
+              <button class="tag-button nsfw" data-tag="ecchi">Ecchi</button>
+              <button class="tag-button nsfw" data-tag="ero">Ero</button>
             </div>
-            <div id="image-container">
-                <img id="image" src="" alt="Generated Image">
-            </div>
-            <div id="image-info" class="hidden">
-                <h4>Credits</h4>
-                <p>Artist: <a id="artist-name" target="_blank" href="#">Artist</a></p>
-                <p>Source: <a id="source-link" target="_blank" href="#">View Source</a></p>
-            </div>
-            <div id="image-buttons">
-                <button id="choose-another-tag">Choose Another Tag</button>
-                <button id="get-another-image">Get Another Image</button>
-            </div>
-        </section>
+          </div>
+        </div>
+        <h3>Powered by <a href="https://www.waifu.im/">Waifu.im API</a>
+        </h3>
+      </section>
+      <section id="image-display" class="hidden">
+        <div id="age-verification" class="hidden">
+          <p>Are you 18 or older?</p>
+          <button id="age-yes">Yes</button>
+          <button id="age-no">No</button>
+        </div>
+        <div id="image-container">
+          <img id="image" src="" alt="Generated Image">
+        </div>
+        <div id="image-info" class="hidden">
+          <h4>Credits</h4>
+          <p>Artist: <a id="artist-name" target="_blank" href="#">Artist</a>
+          </p>
+          <p>Source: <a id="source-link" target="_blank" href="#">View Source</a>
+          </p>
+        </div>
+        <div id="image-buttons">
+          <button id="choose-another-tag">Choose Another Tag</button>
+          <button id="get-another-image">Get Another Image</button>
+        </div>
+      </section>
     </main>
-
     <footer>
-        <a href="https://discord.gg/2nHHHBWNDw" target="_blank"><i class="fab fa-discord"></i></a>
-        <a href="https://ko-fi.com/thatsinewave"><i class="fas fa-heart"></i></a>
-        <a href="https://github.com/ThatSINEWAVE/WaifuZone" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://discord.gg/2nHHHBWNDw" target="_blank">
+        <i class="fab fa-discord"></i>
+      </a>
+      <a href="https://ko-fi.com/thatsinewave">
+        <i class="fas fa-heart"></i>
+      </a>
+      <a href="https://github.com/ThatSINEWAVE/WaifuZone" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
     </footer>
-
-</body>
-
+  </body>
 </html>
